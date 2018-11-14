@@ -13,7 +13,7 @@ export default class Results extends React.Component {
       return response.json();
     })
     .then(responseJson => {
-      this.setState({ data: responseJson });
+      this.setState([{ data: responseJson }]);
     })
   }
 
@@ -22,10 +22,15 @@ export default class Results extends React.Component {
       <View>
       <Text>"Hello"</Text>
       <FlatList
-        data ={[this.state.data]}
-        renderItem={({item}) => {return(<Text>{item.product_name}, {item.ingredients_from_palm_oil_n}</Text>)}}
+        data ={this.state.data}
+        renderItem={({item}) =>
+        <View>
+        <Text>{item.product} {item.ingredients_from_palm_oil_n}</Text>
+        </View>
+      }
+      keyExtractor={(item, index) => index.toString()}
       />
       </View>
-    )
+    );
   }
 }
