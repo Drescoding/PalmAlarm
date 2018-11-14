@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default class Results extends React.Component {
   state = {
@@ -7,7 +7,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount() {
-  return fetch("https://world.openfoodfacts.org/api/v0/product/737628064502.json")
+   fetch("https://world.openfoodfacts.org/api/v0/product/737628064502.json", {method: 'GET'})
     .then(response => {
       console.log(response);
       return response.json();
@@ -20,9 +20,11 @@ export default class Results extends React.Component {
   render(){
     return (
       <View>
-      <Text>
-        {this.state.data}
-      </Text>
+      <Text>"Hello"</Text>
+      <FlatList
+        data ={[this.state.data]}
+        renderItem={({item}) => {return(<Text>{item.product_name}, {item.ingredients_from_palm_oil_n}</Text>)}}
+      />
       </View>
     )
   }
