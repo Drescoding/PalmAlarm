@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 import InputScanner from '../components/InputScanner';
-import InputManual from '../compnents/InputManual';
+import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
   render() {
@@ -12,17 +12,7 @@ class InputScreen extends React.Component {
         <InputScanner />
         <Text>Input Screen</Text>
         <InputManual />
-        <Button
-        title="Submit text"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'ResultsScreen' })
-            ],
-          }))
-        }}
-        />
+
         <Button
         title="Scan"
         onPress={ () => {
