@@ -6,7 +6,16 @@ import InputScanner from '../components/InputScanner';
 import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
+  state = {
+    barCodeNumber: ""
+  };
+
+  handleBarCode = (text) => {
+    this.setState({barCodeNumber: text})
+  }
+
   render() {
+    var that = this;
     return (
       <View style={styles.container}>
         <InputScanner />
@@ -15,7 +24,7 @@ class InputScreen extends React.Component {
         <Button
           title="Submit number!"
           onPress = { () => {
-            console.log(this.state.barCodeNumber) 
+            console.log(that.state.barCodeNumber) ;
             this.props.navigation.dispatch(StackActions.reset({
               index: 0,
               actions: [
@@ -24,6 +33,7 @@ class InputScreen extends React.Component {
             }))
           }}
           />
+    
         <Button
         title="Scan"
         onPress={ () => {
@@ -35,7 +45,9 @@ class InputScreen extends React.Component {
           }))
         }}
         />
+        
       </View>
+      
     );
   }
 }

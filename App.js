@@ -16,10 +16,10 @@ export default createStackNavigator({
   },
   ResultsScreen: {
     screen: ResultsScreen,
+  },
+  InputManual: {
+    screen: InputScreen
   }
-  // InputManual: {
-  //   screen: InputManual
-  // }
 }, {
   initialRouteName: 'HomeScreen',
 });
