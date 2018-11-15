@@ -2,8 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import Results from './components/Results';
 
-
 export default class App extends React.Component {
+
+  // let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode + '.json'
+
   constructor(props){
     super(props);
     this.state = {
@@ -44,7 +46,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <Text>Hi there!</Text>
           <Text> {this.state.dataSource.product.product_name} </Text>
-          <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredients from Palm oil in this </Text>
+          <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
         </View>
 
       );
