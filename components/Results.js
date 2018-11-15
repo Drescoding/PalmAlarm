@@ -18,7 +18,7 @@ export default class Results extends React.Component {
         isLoading: false,
         dataSource: responseJson,
       })
-      console.log(responseJson.product.product_name)
+      console.log(responseJson.status_verbose)
     })
 
     .catch((error) => {
@@ -37,18 +37,23 @@ export default class Results extends React.Component {
       )
     } else {
 
-      return (
-
-        <View style={styles.container}>
-          <Text>Hi there!</Text>
-          <Text> {this.state.dataSource.product.product_name} </Text>
-          <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
-        </View>
-
-      );
+      if (this.state.dataSource.status_verbose == "product not found") {
+        return(
+          <View style={styles.container}>
+            <Text>No product found</Text>
+          </View>
+        );
+      } else {
+        return (
+          <View style={styles.container}>
+            <Text>Hi there!</Text>
+            <Text> {this.state.dataSource.product.product_name} </Text>
+            <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
+          </View>
+        );
+      }
     }
   }
-
 }
 
 const styles = StyleSheet.create({
