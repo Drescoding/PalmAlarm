@@ -12,7 +12,18 @@ class InputScreen extends React.Component {
         <InputScanner />
         <Text>Input Screen</Text>
         <InputManual />
-
+        <Button
+          title="Submit number!"
+          onPress = { () => {
+            console.log(this.state.barCodeNumber) 
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'ResultsScreen' })
+              ],
+            }))
+          }}
+          />
         <Button
         title="Scan"
         onPress={ () => {
