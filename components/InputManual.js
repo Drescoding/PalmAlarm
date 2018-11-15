@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
-import { Text, TextInput, View, StyleSheet, Alert, TouchableOpacity, Button } from 'react-native';
-import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+// import React, { Component } from 'react';
+// import { Text, TextInput, View, StyleSheet, Alert, TouchableOpacity, Button } from 'react-native';
+// import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
-class InputManual extends React.Component {
-   
+// class InputManual extends React.Component {
+ 
 
-  render() {
+//   render() {
 
-    return (
-      <View>
-        <TextInput
-          placeholder = "Manually enter barcode"
-          onChangeText = {this.handleBarCode}
-        />
-          
+//     return (
+//       <View>
+        
+    
+
+//       </View>
       
-      </View>
-      
-    )
-  }
-}
+//     )
+//   }
+// }
 
-export default InputManual;
+// export default InputManual;
 

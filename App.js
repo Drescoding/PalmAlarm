@@ -16,9 +16,6 @@ export default createStackNavigator({
   },
   ResultsScreen: {
     screen: ResultsScreen,
-  },
-  InputManual: {
-    screen: InputScreen
   }
 }, {
   initialRouteName: 'HomeScreen',

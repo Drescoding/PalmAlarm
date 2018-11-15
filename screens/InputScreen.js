@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 import InputScanner from '../components/InputScanner';
@@ -15,13 +15,19 @@ class InputScreen extends React.Component {
   }
 
   render() {
-    var that = this;
+  var that = this;
     return (
       <View style={styles.container}>
         <InputScanner />
         <Text>Input Screen</Text>
-        <InputManual />
-        <Button
+        
+
+        <TextInput
+          placeholder = "Manually enter barcode"
+          onChangeText = {this.handleBarCode}
+        />
+
+         <Button
           title="Submit number!"
           onPress = { () => {
             console.log(that.state.barCodeNumber) ;
