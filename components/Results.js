@@ -9,11 +9,13 @@ export default class Results extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: null,
+      barcode: 737628064502,
     }
   }
 
   componentDidMount(){
-    return fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json')
+    let url = 'https://world.openfoodfacts.org/api/v0/product/' + this.state.barcode +'.json'
+    return fetch(url)
     .then( (response) => response.json() )
     .then ( (responseJson) => {
       this.setState({
@@ -51,7 +53,7 @@ export default class Results extends React.Component {
           <View style={styles.container}>
             <Text> {this.state.dataSource.product.product_name} </Text>
             <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
-            <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#444"/></Animatable.Text>
+            <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#15d628"/></Animatable.Text>
           </View>
           );
           } else {
@@ -59,7 +61,7 @@ export default class Results extends React.Component {
               <View style={styles.container}>
                 <Text> {this.state.dataSource.product.product_name} </Text>
                 <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
-                <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#444"/></Animatable.Text>
+                <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ef2513"/></Animatable.Text>
               </View>
               );
           }
@@ -71,7 +73,7 @@ export default class Results extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#9fa5a1',
     alignItems: 'center',
     justifyContent: 'center',
   },
