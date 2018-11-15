@@ -13,7 +13,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount(){
-    return fetch('https://world.openfoodfacts.org/api/v0/product/3700211234221.json')
+    return fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json')
     .then( (response) => response.json() )
     .then ( (responseJson) => {
       this.setState({
