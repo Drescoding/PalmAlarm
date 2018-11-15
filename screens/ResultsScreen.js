@@ -6,6 +6,7 @@ class ResultsScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        
         <Text>Results Screen</Text>
         <Button
         title="Scan"

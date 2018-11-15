@@ -1,22 +1,41 @@
-// import React, { Component } from 'react';
-// import { Text, TextInput, View, StyleSheet, Alert, TouchableOpacity, Button } from 'react-native';
-// import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+import React, { Component } from 'react';
+import { Text, TextInput, View, StyleSheet, Alert, TouchableOpacity, Button } from 'react-native';
+import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
-// class InputManual extends React.Component {
- 
+class InputManual extends React.Component {
+  state = {
+    barCodeNumber: ""
+  };
 
-//   render() {
+  handleBarCode = (text) => {
+    this.setState({barCodeNumber: text})
+  }
 
-//     return (
-//       <View>
+  render() {
+
+    return (
+      <View>
         
+        <TextInput
+          placeholder = "Manually enter barcode"
+          onChangeText = {this.handleBarCode}
+        />
+
+         <Button
+          title="Submit number!"
+          onPress = { () => {
+            console.log(this.state.barCodeNumber) ;
+            this.props.navigateToResult();
+          }}
+          />
+
     
 
-//       </View>
+      </View>
       
-//     )
-//   }
-// }
+    )
+  }
+}
 
-// export default InputManual;
+export default InputManual;
 

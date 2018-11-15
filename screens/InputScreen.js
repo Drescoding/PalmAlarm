@@ -6,38 +6,24 @@ import InputScanner from '../components/InputScanner';
 import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
-  state = {
-    barCodeNumber: ""
-  };
 
-  handleBarCode = (text) => {
-    this.setState({barCodeNumber: text})
+
+  navigate = () => {
+    this.props.navigation.dispatch(StackActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'ResultsScreen' })
+      ],
+    }))
   }
 
   render() {
-  var that = this;
     return (
       <View style={styles.container}>
         <InputScanner />
         <Text>Input Screen</Text>
-        
-
-        <TextInput
-          placeholder = "Manually enter barcode"
-          onChangeText = {this.handleBarCode}
-        />
-
-         <Button
-          title="Submit number!"
-          onPress = { () => {
-            console.log(that.state.barCodeNumber) ;
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'ResultsScreen' })
-              ],
-            }))
-          }}
+          <InputManual 
+            navigateToResult={() => this.navigate()}
           />
     
         <Button
