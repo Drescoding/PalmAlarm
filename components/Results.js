@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default class Results extends React.Component {
   constructor(props){
@@ -11,7 +13,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount(){
-    return fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json')
+    return fetch('https://world.openfoodfacts.org/api/v0/product/3700211234221.json')
     .then( (response) => response.json() )
     .then ( (responseJson) => {
       this.setState({
@@ -44,13 +46,23 @@ export default class Results extends React.Component {
           </View>
         );
       } else {
-        return (
+          if(this.state.dataSource.product.ingredients_from_palm_oil_n == 0){
+          return(
           <View style={styles.container}>
-            <Text>Hi there!</Text>
             <Text> {this.state.dataSource.product.product_name} </Text>
             <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
+            <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#444"/></Animatable.Text>
           </View>
-        );
+          );
+          } else {
+            return(
+              <View style={styles.container}>
+                <Text> {this.state.dataSource.product.product_name} </Text>
+                <Text> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
+                <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#444"/></Animatable.Text>
+              </View>
+              );
+          }
       }
     }
   }
