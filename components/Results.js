@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/Feather';
-import InputScanner from './InputScanner';
+import InputManual from './InputManual';
 
 export default class Results extends React.Component {
   constructor(props){
@@ -14,8 +14,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount(){
-    input = new InputScanner();
-    console.log('hey' + input._hello())
+    input = new InputManual();
     let barcode = input._hello()
     let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)

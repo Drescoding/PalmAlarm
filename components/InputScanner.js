@@ -31,9 +31,7 @@ class InputScanner extends React.Component {
     this.props.navigateToResult();
   };
 
-  _hello() {
-    return 3700211234221;
-  }
+  
 
   render() {
     return (

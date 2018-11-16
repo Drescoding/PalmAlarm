@@ -11,6 +11,9 @@ class InputManual extends React.Component {
     this.setState({barCodeNumber: text})
   }
 
+  _hello = () => {
+    return 3700211234221;
+  }
   render() {
 
     return (
