@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+import Results from '../components/Results'
 
 class ResultsScreen extends React.Component {
   render() {
