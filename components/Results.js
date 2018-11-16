@@ -9,8 +9,12 @@ export default class Results extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: null,
-      barcode: 737628064502,
+      barcode: "",
     }
+  }
+
+  updateBarcode(barcode){
+    this.setState({barcode})
   }
 
   componentDidMount(){

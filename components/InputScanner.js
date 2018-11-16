@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
+import Results from './Results';
 
 class InputScanner extends React.Component {
   state = {
@@ -24,7 +25,10 @@ class InputScanner extends React.Component {
     this.setState({
       scannedBarCode: data,     
     })   
+
+
     console.log(this.state.scannedBarCode.data)
+    // this.props.updateBarcode(this.state.scannedBarCode.data);
     this.props.navigateToResult();
   };
 
