@@ -1,13 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator} from 'react-native';
-import Results from './components/Results';
 
-export default class App extends React.Component {
- render() {
-   return(
-     <Results />
-   )
- }
-}
+import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
-//Delete this
+import HomeScreen from './screens/HomeScreen';
+import InputScreen from './screens/InputScreen';
+import ResultsScreen from './screens/ResultsScreen';
+import InputManual from './components/InputManual';
+
+
+export default createStackNavigator({
+  HomeScreen: {
+    screen: HomeScreen,
+  },
+  InputScreen: {
+    screen: InputScreen,
+  },
+  ResultsScreen: {
+    screen: ResultsScreen,
+  }
+}, {
+  initialRouteName: 'HomeScreen',
+});
