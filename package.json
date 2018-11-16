@@ -10,7 +10,10 @@
     "test": "node_modules/.bin/jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules"
+    ]
   },
   "dependencies": {
     "expo": "^31.0.2",
