@@ -1,17 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, ImageBackground, Platform} from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
-import { ImageBackground } from 'react-native';
+import { font } from 'Expo';
 
 class HomeScreen extends React.Component {
+
+  componentDidMount() {
+    Font.loadAsync({
+      'Bungee': require('../assets/fonts/BungeeInline-Regular.ttf'),
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
       <ImageBackground
           source={require('../assets/images/homeBackground.jpg')}
           style={styles.homeBackground}>
-          <Text>Home Screen</Text>
+      <View style={styles.headertext}>
+          <Text>PalmAlarm</Text>
+      </View>
       </ImageBackground>
+     
         <Button
         title="Scan"
         onPress={ () => {
@@ -40,7 +50,14 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
-    resizeMode: 'cover'
+    resizeMode: 'stretch'
+  },
+  headertext: {
+    color: 'white',
+    flex: 1,
+    alignItems: 'center',
+    marginTop: '35%',
+    fontFamily: 'Bungee'
   }
 });
 
