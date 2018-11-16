@@ -24,11 +24,9 @@ export default class Results extends React.Component {
       })
       console.log(responseJson.status_verbose)
     })
-
     .catch((error) => {
       console.log(error)
     })
-
   }
 
   render() {
