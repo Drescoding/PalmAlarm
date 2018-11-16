@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/Feather';
+import InputScanner from './InputScanner';
 
 export default class Results extends React.Component {
   constructor(props){
@@ -9,16 +10,14 @@ export default class Results extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: null,
-      barcode: "",
     }
   }
 
-  updateBarcode(barcode){
-    this.setState({barcode})
-  }
-
   componentDidMount(){
-    let url = 'https://world.openfoodfacts.org/api/v0/product/' + this.state.barcode +'.json'
+    input = new InputScanner();
+    console.log('hey' + input._hello())
+    let barcode = input._hello()
+    let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)
     .then( (response) => response.json() )
     .then ( (responseJson) => {

@@ -9,6 +9,8 @@ class InputScanner extends React.Component {
     scannedBarCode: null,
   };
 
+
+
   componentDidMount() {
     this._requestCameraPermission();
   }
@@ -23,14 +25,15 @@ class InputScanner extends React.Component {
   _handleBarCodeRead = async (data) => {
     const { code } = await data
     this.setState({
-      scannedBarCode: data,     
-    })   
-
-
+      scannedBarCode: data,
+    })
     console.log(this.state.scannedBarCode.data)
-    // this.props.updateBarcode(this.state.scannedBarCode.data);
     this.props.navigateToResult();
   };
+
+  _hello() {
+    return 3700211234221;
+  }
 
   render() {
     return (
