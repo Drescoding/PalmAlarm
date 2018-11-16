@@ -8,6 +8,8 @@ only:
 cache:
 directories:
 - node_modules
+- ~/.npm
+- .jest
 before_install:
 - npm update
 install:
