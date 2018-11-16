@@ -7,7 +7,6 @@ import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
 
-
   navigate = () => {
     this.props.navigation.dispatch(StackActions.reset({
       index: 0,
@@ -24,26 +23,12 @@ class InputScreen extends React.Component {
         <Text>Input Screen</Text>
           <InputManual 
             navigateToResult={() => this.navigate()}
-          />
-    
-        <Button
-        title="Scan"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'ResultsScreen' })
-            ],
-          }))
-        }}
-        />
-        
+          />      
       </View>
       
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {

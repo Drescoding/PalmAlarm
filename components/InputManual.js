@@ -15,7 +15,6 @@ class InputManual extends React.Component {
 
     return (
       <View>
-        
         <TextInput
           placeholder = "Manually enter barcode"
           onChangeText = {this.handleBarCode}
@@ -28,14 +27,9 @@ class InputManual extends React.Component {
             this.props.navigateToResult();
           }}
           />
-
-    
-
       </View>
-      
     )
   }
 }
 
 export default InputManual;
-

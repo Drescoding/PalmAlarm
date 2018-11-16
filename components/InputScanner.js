@@ -24,7 +24,7 @@ class InputScanner extends React.Component {
     this.setState({
       scannedBarCode: data,     
     })   
-    console.log(this.state.scannedBarCode)
+    console.log(this.state.scannedBarCode.data)
     this.props.navigateToResult();
   };
 

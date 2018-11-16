@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import { ImageBackground } from 'react-native';
 
-
-
 class HomeScreen extends React.Component {
   render() {
     return (
