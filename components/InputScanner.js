@@ -4,7 +4,8 @@ import { Constants, BarCodeScanner, Permissions } from 'expo';
 
 class InputScanner extends React.Component {
   state = {
-    hasCameraPermission: null
+    hasCameraPermission: null,
+    scannedBarCode: null,
   };
 
   componentDidMount() {
@@ -18,11 +19,13 @@ class InputScanner extends React.Component {
     });
   };
 
-  _handleBarCodeRead = data => {
-    Alert.alert(
-      'Scan successful!',
-      JSON.stringify(data)
-    );
+  _handleBarCodeRead = async (data) => {
+    const { code } = await data
+    this.setState({
+      scannedBarCode: data,     
+    })   
+    console.log(this.state.scannedBarCode)
+    this.props.navigateToResult();
   };
 
   render() {

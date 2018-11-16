@@ -20,7 +20,7 @@ class InputScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <InputScanner />
+        <InputScanner navigateToResult={() => this.navigate()}/>
         <Text>Input Screen</Text>
           <InputManual 
             navigateToResult={() => this.navigate()}
