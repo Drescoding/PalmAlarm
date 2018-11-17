@@ -7,29 +7,15 @@ class ResultsScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        < Results />
+        <Results />
         <Text>Results Screen</Text>
         <Button
         title="Scan"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'InputScreen' })
-            ],
-          }))
-        }}
+        onPress={() => this.props.navigation.navigate('InputScreen')}
         />
         <Button
         title="Home"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'HomeScreen' })
-            ],
-          }))
-        }}
+        onPress={() => this.props.navigation.navigate('HomeScreen')}
         />
       </View>
     );
