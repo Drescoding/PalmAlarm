@@ -6,7 +6,7 @@ import Results from './Results';
 class InputScanner extends React.Component {
   state = {
     hasCameraPermission: null,
-    scannedBarCode: null,
+    barcode: null,
   };
 
   componentDidMount() {
@@ -16,16 +16,14 @@ class InputScanner extends React.Component {
   _requestCameraPermission = async () => {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({
-      hasCameraPermission: status === 'granted',
+      hasCameraPermission: status === 'granted'
     });
   };
 
   _handleBarCodeRead = async (data) => {
     const { code } = await data
-    this.setState({
-      scannedBarCode: data,
-    })
-    console.log(this.state.scannedBarCode.data)
+    this.setState({barcode: data}, () => {this.props.callBackFromParent(this.state.barcode.data)})
+    console.log(this.state.barcode.data)
     this.props.navigateToResult();
   };
 
@@ -34,12 +32,12 @@ class InputScanner extends React.Component {
       <View style={styles.container}>
         {this.state.hasCameraPermission === null ?
           <Text>Requesting for camera permission</Text> :
-          this.state.hasCameraPermission === false ?
-            <Text>Camera permission is not granted</Text> :
-            <BarCodeScanner
+        this.state.hasCameraPermission === false ?
+          <Text>Camera permission is not granted</Text> :
+          <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
               style={{ height: 200, width: 200 }}
-            />
+          />
         }
       </View>
     );

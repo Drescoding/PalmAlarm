@@ -9,7 +9,6 @@ class ResultsScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Results barcode={barcode}/>
-        <Text>The barcode is: {JSON.stringify(barcode)}</Text>
         <Text>Results Screen</Text>
         <Button
         title="Scan"
