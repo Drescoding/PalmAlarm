@@ -10,16 +10,13 @@ class InputManual extends React.Component {
     }
   }
 
-  componentWillMount(){
-
-  }
-
   render() {
     return (
       <View>
         <TextInput
           placeholder = "Manually enter barcode"
           onChangeText = {(barcode) => {
+            this.props.callBackFromParent(this.state.barcode);
             this.setState({barcode})
             }
           }
@@ -29,8 +26,8 @@ class InputManual extends React.Component {
           title="Submit number!"
           onPress = { () => {
             console.log('Manual' + this.state.barcode) ;
-            this.props.navigateToResult();
             this.props.callBackFromParent(this.state.barcode);
+            this.props.navigateToResult();
           }}
           />
       </View>

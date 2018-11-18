@@ -13,7 +13,7 @@ class InputScreen extends React.Component {
     }
   }
 
-  myCallback(dataFromChild) {
+  myCallback = (dataFromChild) => {
     this.setState({barcode: dataFromChild});
     console.log('InpScreen'+ this.state.barcode)
   }
@@ -25,7 +25,7 @@ class InputScreen extends React.Component {
         <Text>Input Screen</Text>
         <Text>{this.state.barcode}</Text>
         <InputManual
-        callBackFromParent={this.myCallback.bind(this)}
+        callBackFromParent={this.myCallback}
         navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
 
         />
