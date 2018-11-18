@@ -25,9 +25,8 @@ class InputScreen extends React.Component {
         <Text>Input Screen</Text>
         <Text>{this.state.barcode}</Text>
         <InputManual
-        callBackFromParent={this.myCallback}
         navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
-
+        callBackFromParent={this.myCallback}
         />
       </View>
     );
