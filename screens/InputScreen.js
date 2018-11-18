@@ -9,13 +9,13 @@ class InputScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      barcode: 'default'
+      barcode: '123123123'
     }
   }
 
-  myCallback = (dataFromChild) => {
+  myCallback(dataFromChild) {
     this.setState({barcode: dataFromChild});
-    console.log('call'+ this.state.barcode)
+    console.log('InpScreen'+ this.state.barcode)
   }
 
   render() {
@@ -23,8 +23,12 @@ class InputScreen extends React.Component {
       <View style={styles.container}>
         <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen')}/>
         <Text>Input Screen</Text>
-        <InputManual callBackFromParent={this.myCallback}
-        navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}/>
+        <Text>{this.state.barcode}</Text>
+        <InputManual
+        callBackFromParent={this.myCallback.bind(this)}
+        navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+
+        />
       </View>
     );
   }

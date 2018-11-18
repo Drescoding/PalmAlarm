@@ -10,6 +10,10 @@ class InputManual extends React.Component {
     }
   }
 
+  componentWillMount(){
+
+  }
+
   render() {
     return (
       <View>
@@ -24,14 +28,15 @@ class InputManual extends React.Component {
          <Button
           title="Submit number!"
           onPress = { () => {
-            console.log(this.state.barcode) ;
-            this.props.callBackFromParent(this.state.barcode);
+            console.log('Manual' + this.state.barcode) ;
             this.props.navigateToResult();
+            this.props.callBackFromParent(this.state.barcode);
           }}
           />
       </View>
     )
   }
+
 }
 
 export default InputManual;
