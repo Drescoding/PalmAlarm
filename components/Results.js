@@ -14,8 +14,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount(){
-    input = new InputManual();
-    let barcode = input._hello()
+    barcode = this.props.barcode
     let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)
     .then( (response) => response.json() )
@@ -24,7 +23,6 @@ export default class Results extends React.Component {
         isLoading: false,
         dataSource: responseJson,
       })
-      console.log(responseJson.status_verbose)
     })
     .catch((error) => {
       console.log(error)

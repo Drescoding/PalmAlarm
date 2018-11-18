@@ -5,9 +5,11 @@ import Results from '../components/Results'
 
 class ResultsScreen extends React.Component {
   render() {
+    const barcode = this.props.navigation.getParam('barcode', 'Default: No barcode');
     return (
       <View style={styles.container}>
-        <Results />
+        <Results barcode={barcode}/>
+        <Text>The barcode is: {JSON.stringify(barcode)}</Text>
         <Text>Results Screen</Text>
         <Button
         title="Scan"

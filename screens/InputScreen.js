@@ -6,12 +6,25 @@ import InputScanner from '../components/InputScanner';
 import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      barcode: 'default'
+    }
+  }
+
+  myCallback = (dataFromChild) => {
+    this.setState({barcode: dataFromChild});
+    console.log('call'+ this.state.barcode)
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen')}/>
         <Text>Input Screen</Text>
-        <InputManual navigateToResult={() => this.props.navigation.navigate('ResultsScreen')}/>
+        <InputManual callBackFromParent={this.myCallback}
+        navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}/>
       </View>
     );
   }
