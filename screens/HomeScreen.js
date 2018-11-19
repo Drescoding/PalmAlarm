@@ -29,24 +29,12 @@ class HomeScreen extends React.Component {
               <Text style={styles.text}>PalmAlarm</Text>
             </View>
             <View>
-              <Button
-                style={styles.buttonStyle}
-                title="Scan"
-                onPress={ () => {
-                  this.props.navigation.dispatch(StackActions.reset({
-                  index: 0,
-                  actions: [
-                  NavigationActions.navigate({ routeName: 'InputScreen' })
-                  ],
-                  }))
-                }}
-              />
+            <Button style={styles.buttonStyle}
+            title="Scan"
+            onPress={() => this.props.navigation.navigate('InputScreen')}
+            />
             </View>
       </ImageBackground>
-        <Button
-        title="Scan"
-        onPress={() => this.props.navigation.navigate('InputScreen')}
-        />
       </View>
     );
   }
@@ -79,9 +67,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(92, 99,216, 1)",
     width: 300,
     height: 45,
-    borderColor: "transparent",
+    borderColor: "white",
     borderWidth: 0,
-    borderRadius: 5
+    borderRadius: 5,
+    fontSize: 65
   }
 });
 
