@@ -3,33 +3,34 @@ import { Text, TextInput, View, StyleSheet, Alert, TouchableOpacity, Button } fr
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 class InputManual extends React.Component {
-  state = {
-    barCodeNumber: ""
-  };
-
-  handleBarCode = (text) => {
-    this.setState({barCodeNumber: text})
+  constructor(props){
+    super(props);
+    this.state = {
+      barcode: ''
+    }
   }
 
   render() {
-
     return (
       <View>
         <TextInput
           placeholder = "Manually enter barcode"
-          onChangeText = {this.handleBarCode}
+          onChangeText = {(barcode) => {
+            this.setState({barcode}, () => {this.props.callBackFromParent(this.state.barcode)})
+            }
+          }
         />
 
          <Button
           title="Submit number!"
           onPress = { () => {
-            console.log(this.state.barCodeNumber) ;
             this.props.navigateToResult();
           }}
           />
       </View>
     )
   }
+
 }
 
 export default InputManual;

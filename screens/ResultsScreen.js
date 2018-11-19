@@ -5,31 +5,18 @@ import Results from '../components/Results'
 
 class ResultsScreen extends React.Component {
   render() {
+    const barcode = this.props.navigation.getParam('barcode', 'Default: No barcode');
     return (
       <View style={styles.container}>
-        < Results />
+        <Results barcode={barcode}/>
         <Text>Results Screen</Text>
         <Button
         title="Scan"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'InputScreen' })
-            ],
-          }))
-        }}
+        onPress={() => this.props.navigation.navigate('InputScreen')}
         />
         <Button
         title="Home"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'HomeScreen' })
-            ],
-          }))
-        }}
+        onPress={() => this.props.navigation.navigate('HomeScreen')}
         />
       </View>
     );
