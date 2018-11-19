@@ -46,6 +46,8 @@ export default class Results extends React.Component {
           </View>
         );
       } else {
+          console.log("There are ..." + this.state.dataSource.product.ingredients_from_palm_oil_tags.length())
+          //Problem here - the ingredients_from_palm_oil_n field doesn't exist on all records. It seems that ngredients_from_palm_oil_tags works though!
           if(this.state.dataSource.product.ingredients_from_palm_oil_n == 0){
           return(
           <View style={styles.container}>
