@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, ImageBackground, Platform} from 'react-native';
-import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+import { StyleSheet, Text, View, ImageBackground, TouchableHighlight} from 'react-native';
 import { AppLoading, Font } from 'expo';
+
 
 class HomeScreen extends React.Component {
   state = {
@@ -22,19 +22,24 @@ class HomeScreen extends React.Component {
     }
     return (
       <View style={styles.container}>
+
       <ImageBackground
           source={require('../assets/images/homeBackground.jpg')}
-          style={styles.homeBackground}>
-            <View style={styles.headertext}>
+          style={styles.container}>
+
+            <View style={styles.headerContainer}>
               <Text style={styles.text}>PalmAlarm</Text>
             </View>
-            <View>
-            <Button style={styles.buttonStyle}
-            title="Scan"
-            onPress={() => this.props.navigation.navigate('InputScreen')}
-            />
+
+            <View style={styles.buttonContainer}>
+            <TouchableHighlight
+              onPress={() => this.props.navigation.navigate('InputScreen')}>
+              <Text style={styles.buttonText}>Scan</Text>
+              </TouchableHighlight>
             </View>
+            
       </ImageBackground>
+        
       </View>
     );
   }
@@ -43,17 +48,11 @@ class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  homeBackground: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
+    width: null,
+    height: null,
     resizeMode: 'stretch'
   },
-  headertext: {
-    color: 'white',
+  headerContainer: {
     flex: 1,
     alignItems: 'center',
     marginTop: '38%',
@@ -63,14 +62,17 @@ const styles = StyleSheet.create({
     fontSize: 65,
     color: 'gray'
   },
-  buttonStyle: {
-    backgroundColor: "rgba(92, 99,216, 1)",
-    width: 300,
-    height: 45,
-    borderColor: "white",
-    borderWidth: 0,
-    borderRadius: 5,
-    fontSize: 65
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 350,
+    borderRadius: 10,
+  },
+  buttonText: {
+    backgroundColor: "white",
+    // width: '60%',
+    // height: 55,
+    
   }
 });
 
