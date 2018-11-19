@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/Feather';
+import InputManual from './InputManual';
 
 export default class Results extends React.Component {
   constructor(props){
@@ -9,12 +10,12 @@ export default class Results extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: null,
-      barcode: 737628064502,
     }
   }
 
   componentDidMount(){
-    let url = 'https://world.openfoodfacts.org/api/v0/product/' + this.state.barcode +'.json'
+    barcode = this.props.barcode
+    let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)
     .then( (response) => response.json() )
     .then ( (responseJson) => {
@@ -22,7 +23,6 @@ export default class Results extends React.Component {
         isLoading: false,
         dataSource: responseJson,
       })
-      console.log(responseJson.status_verbose)
     })
     .catch((error) => {
       console.log(error)
@@ -46,6 +46,8 @@ export default class Results extends React.Component {
           </View>
         );
       } else {
+          console.log("There are ..." + this.state.dataSource.product.ingredients_from_palm_oil_tags.length())
+          //Problem here - the ingredients_from_palm_oil_n field doesn't exist on all records. It seems that ngredients_from_palm_oil_tags works though!
           if(this.state.dataSource.product.ingredients_from_palm_oil_n == 0){
           return(
           <View style={styles.container}>

@@ -5,19 +5,18 @@ import { createStackNavigator, StackActions, NavigationActions } from 'react-nav
 import HomeScreen from './screens/HomeScreen';
 import InputScreen from './screens/InputScreen';
 import ResultsScreen from './screens/ResultsScreen';
-import InputManual from './components/InputManual';
 
 
-export default createStackNavigator({
-  HomeScreen: {
-    screen: HomeScreen,
+
+
+
+export default createStackNavigator(
+  {
+    HomeScreen: HomeScreen,
+    InputScreen: InputScreen,
+    ResultsScreen: ResultsScreen,
   },
-  InputScreen: {
-    screen: InputScreen,
-  },
-  ResultsScreen: {
-    screen: ResultsScreen,
+  {
+    initialRouteName: 'HomeScreen'
   }
-}, {
-  initialRouteName: 'HomeScreen',
-});
+);

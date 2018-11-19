@@ -14,14 +14,7 @@ class HomeScreen extends React.Component {
       </ImageBackground>
         <Button
         title="Scan"
-        onPress={ () => {
-          this.props.navigation.dispatch(StackActions.reset({
-            index: 0,
-            actions: [
-              NavigationActions.navigate({ routeName: 'InputScreen' })
-            ],
-          }))
-        }}
+        onPress={() => this.props.navigation.navigate('InputScreen')}
         />
       </View>
     );
@@ -31,8 +24,6 @@ class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#fff',
-    // background: 'url(./assets/images/homeBackground.jpg)'
     alignItems: 'center',
     justifyContent: 'center',
   },
