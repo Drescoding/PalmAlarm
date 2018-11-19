@@ -36,13 +36,13 @@ class HomeScreen extends React.Component {
                 <Text style={styles.text}>PalmAlarm</Text>
               </View>
 
-              <View style={styles.buttonContainer}>
-              <TouchableHighlight
+              <View>
+              <TouchableHighlight style={styles.buttonContainer}
                 onPress={() => this.props.navigation.navigate('InputScreen')}>
                 <Text style={styles.buttonText}>Scan</Text>
                 </TouchableHighlight>
               </View>
-              
+
         </ImageBackground>
       </View>
     );
@@ -72,11 +72,15 @@ const styles = StyleSheet.create({
     // marginBottom: 150,
     borderRadius: 10,
   },
+
+
   buttonText: {
     backgroundColor: "white",
-    // width: '60%',
-    // height: 55,
-    
+    width: 250,
+    height: 55,
+    fontSize: 30,
+    textAlign: 'center',
+
   }
 });
 
