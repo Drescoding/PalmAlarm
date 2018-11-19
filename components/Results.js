@@ -46,26 +46,55 @@ export default class Results extends React.Component {
           </View>
         );
       } else {
-          console.log("There are ..." + this.state.dataSource.product.ingredients_from_palm_oil_tags.length())
+          // console.log(this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags )
           //Problem here - the ingredients_from_palm_oil_n field doesn't exist on all records. It seems that ngredients_from_palm_oil_tags works though!
-          if(this.state.dataSource.product.ingredients_from_palm_oil_n == 0){
+          if(this.state.dataSource.product.ingredients_from_palm_oil_n > 0 || this.state.dataSource.product.ingredients_from_palm_oil_tags.length > 0){
           return(
           <View style={styles.container}>
             <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
             <Text style={styles.text}> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
-            <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#ffff"/></Animatable.Text>
+            <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
           </View>
           );
-          } else {
+          } else if (this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_n > 0 || 
+            
+            ( this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tabs != undefined 
+              
+              && this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tabs.length > 0 ) ) {
+
             return(
               <View style={styles.container}>
                 <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
-                <Text style={styles.text}> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
+                <Text style={styles.text}> These ingredients: {this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags} may involve the use of palm oil </Text>
                 <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
               </View>
               );
+          } else if (this.state.dataSource.product.ingredients_from_palm_oil_n === 0
+            
+            && (this.state.dataSource.product.ingredients_from_palm_oil_tags == undefined || this.state.dataSource.product.ingredients_from_palm_oil_tags.length == 0)
+            
+            && this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_n === 0
+
+            && (this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags == undefined || this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags.length == 0)
+            
+            ) {
+          console.log("NOOO PALM OIL")
+          return(
+            <View style={styles.container}>
+              <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
+              <Text style={styles.text}> NOO PALM OIL</Text>
+              <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#ffff"/></Animatable.Text>
+            </View>
+            );
+          } else {
+          return(
+            <View style={styles.container}>
+              <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
+              <Text style={styles.text}> We could not find information about this product</Text>
+            </View>
+            ); 
           }
-      }
+        } 
     }
   }
 }
