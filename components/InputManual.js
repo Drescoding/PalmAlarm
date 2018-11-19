@@ -20,7 +20,6 @@ class InputManual extends React.Component {
             }
           }
         />
-
          <Button
           title="Submit number!"
           onPress = { () => {
@@ -30,7 +29,6 @@ class InputManual extends React.Component {
       </View>
     )
   }
-
 }
 
 export default InputManual;

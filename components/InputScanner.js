@@ -36,7 +36,7 @@ class InputScanner extends React.Component {
           <Text>Camera permission is not granted</Text> :
           <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: 200, width: 200 }}
+              style={{ height: '100%', width: 500 }}
           />
         }
       </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: 'transparent',
   }
 });
 
