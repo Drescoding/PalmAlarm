@@ -52,35 +52,33 @@ class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: null,
-    height: null,
+    width: '100%',
+    height: '100%',
     resizeMode: 'stretch',
+    alignItems: 'center',
     justifyContent: 'space-evenly',
   },
   headerContainer: {
     alignItems: 'center',
-    // marginTop: '38%',
   },
   text: {
     fontFamily: 'argana',
     fontSize: 65,
-    color: 'gray'
+    color: 'gray',
   },
   buttonContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    // marginBottom: 150,
     borderRadius: 10,
-  },
-
-
-  buttonText: {
-    backgroundColor: "white",
     width: 250,
     height: 55,
+    backgroundColor: "white"
+  },
+
+  buttonText: {
+    backgroundColor: "transparent",
+
     fontSize: 30,
     textAlign: 'center',
-
+    padding: 10,
   }
 });
 
