@@ -70,15 +70,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 250,
     height: 55,
-    backgroundColor: "white"
+    marginBottom: 150,
+    backgroundColor: "#E4DFC1"
   },
 
   buttonText: {
     backgroundColor: "transparent",
-
     fontSize: 30,
     textAlign: 'center',
     padding: 10,
+    color: 'gray'
   }
 });
 
