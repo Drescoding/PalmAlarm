@@ -66,12 +66,12 @@ const styles = StyleSheet.create({
     color: 'white',
     flex: 1,
     alignItems: 'center',
-    marginTop: '35%',
+    marginTop: '38%',
   },
   text: {
     fontFamily: 'argana',
-    fontSize: 35,
-    color: 'white'
+    fontSize: 65,
+    color: 'gray'
   },
   buttonStyle: {
     backgroundColor: "rgba(92, 99,216, 1)",
