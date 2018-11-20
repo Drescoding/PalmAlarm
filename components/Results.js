@@ -40,8 +40,8 @@ export default class Results extends React.Component {
       )
     } else {
 
-      if (this.state.dataSource.status_verbose == "product not found" || this.props.barcode == undefined) {
-  
+      if (this.state.dataSource.status_verbose == "product not found" || this.props.barcode == "default") {
+
         //Case 2: The barcode does not exist in the database
         return(
           <View style={styles.container}>
