@@ -33,7 +33,7 @@ class InputManual extends React.Component {
           <TouchableHighlight
            // style={styles.buttonText}
            onPress = { () => {
-             this.props.navigateToResult();
+             this.props.navigateToHome();
            }}>
            <Text style={styles.buttonText}>Home</Text>
            </TouchableHighlight>

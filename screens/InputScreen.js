@@ -28,7 +28,10 @@ class InputScreen extends React.Component {
         navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
         callBackFromParent={this.myCallback}
         />
-        <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+        <InputScanner
+        navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+        callBackFromParent={this.myCallback}
+        navigateToHome={() => this.props.navigation.navigate('HomeScreen', {barcode: this.state.barcode})}
         callBackFromParent={this.myCallback}
         />
       </View>
