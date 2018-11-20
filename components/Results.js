@@ -15,6 +15,7 @@ export default class Results extends React.Component {
 
   componentDidMount(){
     barcode = this.props.barcode
+    console.log(barcode)
     let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)
     .then( (response) => response.json() )
@@ -48,7 +49,7 @@ export default class Results extends React.Component {
       } else {
           // console.log(this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags )
           //Problem here - the ingredients_from_palm_oil_n field doesn't exist on all records. It seems that ngredients_from_palm_oil_tags works though!
-          if(this.state.dataSource.product.ingredients_from_palm_oil_n > 0 || this.state.dataSource.product.ingredients_from_palm_oil_tags.length > 0){
+          if (this.state.dataSource.product.ingredients_from_palm_oil_n > 0 || (this.state.dataSource.product.ingredients_from_palm_oil_tags != undefined && this.state.dataSource.product.ingredients_from_palm_oil_tags.length > 0)) {
           return(
           <View style={styles.container}>
             <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
