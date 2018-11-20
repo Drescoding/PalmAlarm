@@ -13,7 +13,6 @@ class ResultsScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Results barcode={barcode}/>
-        <Text>Results Screen</Text>
         <Button
         title="Scan"
         onPress={() => this.props.navigation.navigate('InputScreen')}
@@ -30,7 +29,7 @@ class ResultsScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#4A7051',
     alignItems: 'center',
     justifyContent: 'center',
   },
