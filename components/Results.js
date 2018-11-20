@@ -57,7 +57,7 @@ export default class Results extends React.Component {
         //Case 2: The barcode does not exist in the database
         return(
           <View style={styles.container}>
-            <Text>Product not found</Text>
+            <Text style={styles.text}>Product not found</Text>
           </View>
         );
       } else {
