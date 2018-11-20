@@ -27,8 +27,17 @@ class InputManual extends React.Component {
           onPress = { () => {
             this.props.navigateToResult();
           }}>
-          <Text>Submit barcode</Text>
+          <Text style={styles.buttonText}>Submit barcode</Text>
           </TouchableHighlight>
+
+          <TouchableHighlight
+           // style={styles.buttonText}
+           onPress = { () => {
+             this.props.navigateToResult();
+           }}>
+           <Text style={styles.buttonText}>Home</Text>
+           </TouchableHighlight>
+
       </View>
     )
   }
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     backgroundColor: "transparent",
-    fontSize: 30,
+    fontSize: 20,
     textAlign: 'center',
     padding: 10,
     color: 'gray'
