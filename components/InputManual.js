@@ -23,15 +23,15 @@ class InputManual extends React.Component {
         />
 
          <TouchableHighlight
-          // style={styles.buttonText}
+          style={styles.buttonContainer}
           onPress = { () => {
             this.props.navigateToResult();
           }}>
-          <Text style={styles.buttonText}>Submit barcode</Text>
+          <Text style={styles.buttonText}>Submit Barcode</Text>
           </TouchableHighlight>
 
           <TouchableHighlight
-           // style={styles.buttonText}
+           style={styles.buttonContainer}
            onPress = { () => {
              this.props.navigateToHome();
            }}>
@@ -48,12 +48,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 10,
+    marginBottom: 10,
   },
   buttonContainer: {
-    borderRadius: 10,
-    width: 250,
-    height: 55,
-    marginBottom: 150,
+    borderRadius: 8,
+    width: 225,
+    height: 40,
+    marginBottom: 10,
     backgroundColor: "#E4DFC1"
   },
   buttonText: {
