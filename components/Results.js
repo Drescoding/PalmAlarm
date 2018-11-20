@@ -43,59 +43,56 @@ export default class Results extends React.Component {
       if (this.state.dataSource.status_verbose == "product not found") {
         return(
           <View style={styles.container}>
-            <Text>No product found</Text>
+            <Text>Product not found</Text>
           </View>
         );
       } else {
-          // console.log(this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags )
-          //Problem here - the ingredients_from_palm_oil_n field doesn't exist on all records. It seems that ngredients_from_palm_oil_tags works though!
-          if (this.state.dataSource.product.ingredients_from_palm_oil_n > 0 || (this.state.dataSource.product.ingredients_from_palm_oil_tags != undefined && this.state.dataSource.product.ingredients_from_palm_oil_tags.length > 0)) {
+        const palm_ingredients_total = this.state.dataSource.product.ingredients_from_palm_oil_n;
+        const palm_ingredients_list = this.state.dataSource.product.ingredients_from_palm_oil_tags;
+        const maybe_total = this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_n;
+        const maybe_list = this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags;
+        const product_name = this.state.dataSource.product.product_name
+
+          if (palm_ingredients_total > 0 || (palm_ingredients_list != undefined && palm_ingredients_list.length > 0)) {
           return(
           <View style={styles.container}>
-            <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
-            <Text style={styles.text}> There are {this.state.dataSource.product.ingredients_from_palm_oil_n} ingredient from Palm oil in this </Text>
+            <Text style={styles.text}> {product_name} </Text>
+            <Text style={styles.text}> There are {palm_ingredients_total} ingredient from Palm oil in this </Text>
             <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
           </View>
           );
-          } else if (this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_n > 0 || 
-            
-            ( this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tabs != undefined 
-              
-              && this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tabs.length > 0 ) ) {
+          } else if (maybe_total > 0 ||
+            //I think these aren't used because that's where the typo was.
+            ( maybe_list != undefined && maybe_list.length > 0 ) ) {
 
             return(
               <View style={styles.container}>
-                <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
-                <Text style={styles.text}> These ingredients: {this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags} may involve the use of palm oil </Text>
+                <Text style={styles.text}> {product_name} </Text>
+                <Text style={styles.text}> These ingredients: {maybe_list} may involve the use of palm oil </Text>
                 <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
               </View>
               );
-          } else if (this.state.dataSource.product.ingredients_from_palm_oil_n === 0
-            
-            && (this.state.dataSource.product.ingredients_from_palm_oil_tags == undefined || this.state.dataSource.product.ingredients_from_palm_oil_tags.length == 0)
-            
-            && this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_n === 0
-
-            && (this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags == undefined || this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags.length == 0)
-            
+          } else if (palm_ingredients_total === 0 && (palm_ingredients_list == undefined ||
+            palm_ingredients_list.length == 0) && maybe_total === 0
+            && (maybe_list == undefined || maybe_list.length == 0)
             ) {
           console.log("NOOO PALM OIL")
           return(
             <View style={styles.container}>
-              <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
-              <Text style={styles.text}> NOO PALM OIL</Text>
+              <Text style={styles.text}> {product_name} </Text>
+              <Text style={styles.text}> No palm oil!</Text>
               <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#ffff"/></Animatable.Text>
             </View>
             );
           } else {
           return(
             <View style={styles.container}>
-              <Text style={styles.text}> {this.state.dataSource.product.product_name} </Text>
-              <Text style={styles.text}> We could not find information about this product</Text>
+              <Text style={styles.text}> {product_name} </Text>
+              <Text style={styles.text}> No information regarding presence of palm oil for this product</Text>
             </View>
-            ); 
+            );
           }
-        } 
+        }
     }
   }
 }
