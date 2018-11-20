@@ -6,6 +6,10 @@ import InputScanner from '../components/InputScanner';
 import InputManual from '../components/InputManual';
 
 class InputScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+    };
+
   constructor(props){
     super(props);
     this.state = {
@@ -20,12 +24,11 @@ class InputScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
-        callBackFromParent={this.myCallback}
-        />
-        <Text>Input Screen</Text>
         <InputManual
         navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+        callBackFromParent={this.myCallback}
+        />
+        <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
         callBackFromParent={this.myCallback}
         />
       </View>
@@ -35,8 +38,9 @@ class InputScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 50,
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E4DFC1',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -4,6 +4,10 @@ import { createStackNavigator, StackActions, NavigationActions } from 'react-nav
 import Results from '../components/Results'
 
 class ResultsScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+    };
+    
   render() {
     const barcode = this.props.navigation.getParam('barcode', 'Default: No barcode');
     return (

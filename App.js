@@ -6,10 +6,6 @@ import HomeScreen from './screens/HomeScreen';
 import InputScreen from './screens/InputScreen';
 import ResultsScreen from './screens/ResultsScreen';
 
-
-
-
-
 export default createStackNavigator(
   {
     HomeScreen: HomeScreen,
@@ -17,6 +13,6 @@ export default createStackNavigator(
     ResultsScreen: ResultsScreen,
   },
   {
-    initialRouteName: 'HomeScreen'
-  }
+    initialRouteName: 'HomeScreen',
+  },
 );
