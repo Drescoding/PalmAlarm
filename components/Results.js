@@ -14,7 +14,7 @@ export default class Results extends React.Component {
   }
 
   componentDidMount(){
-    barcode = this.props.barcode
+    const barcode = this.props.barcode
     console.log(barcode)
     let url = 'https://world.openfoodfacts.org/api/v0/product/' + barcode +'.json'
     return fetch(url)
@@ -39,7 +39,8 @@ export default class Results extends React.Component {
         </View>
       )
     } else {
-      if (this.state.dataSource.status_verbose == "product not found") {
+
+      if (this.state.dataSource.status_verbose == "product not found" || this.state.barcode == undefined) {
         //Case 2: The barcode does not exist in the database
         return(
           <View style={styles.container}>
