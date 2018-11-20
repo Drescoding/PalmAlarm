@@ -10,7 +10,7 @@
     "test": "node_modules/.bin/jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "verbose": true
   },
   "dependencies": {
     "expo": "^31.0.2",
@@ -21,7 +21,11 @@
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "expo-cli": "1.1.0-beta.4",
-    "jest-expo": "^31.0.0"
+    "jest-expo": "^31.0.0",
+    "react-test-renderer": "^16.6.3"
   }
 }
