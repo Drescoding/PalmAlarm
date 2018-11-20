@@ -61,7 +61,7 @@ export default class Results extends React.Component {
             return(
             <View style={styles.container}>
               <Text style={styles.text}> {product_name} </Text>
-              <Text style={styles.text}> There are {palm_ingredients_total} ingredient from Palm oil in this </Text>
+              <Text style={styles.text}> This product contains {palm_ingredients_total} ingredient(s) from Palm oil</Text>
               <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
             </View>);
           } else if (maybe_total > 0 || maybe_list.length > 0){
@@ -70,7 +70,7 @@ export default class Results extends React.Component {
               return(
                 <View style={styles.container}>
                   <Text style={styles.text}> {product_name} </Text>
-                  <Text style={styles.text}> These ingredients: {maybe_list} may involve the use of palm oil </Text>
+                  <Text style={styles.text}> These ingredients: {maybe_list} may involve the use of palm oil</Text>
                 </View>
               );
           } else if (palm_ingredients_total === 0 && palm_ingredients_list.length == 0 && (maybe_total === 0 || maybe_total === undefined)
@@ -80,7 +80,7 @@ export default class Results extends React.Component {
               return(
                 <View style={styles.container}>
                   <Text style={styles.text}> {product_name} </Text>
-                  <Text style={styles.text}> No palm oil!</Text>
+                  <Text style={styles.text}>This product does not contain palm oil</Text>
                   <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#ffff"/></Animatable.Text>
                 </View>
               );
