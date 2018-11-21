@@ -1,3 +1,9 @@
-it('works', () => {
-  expect(1).toBe(1);
+import React from 'react';
+import Results from '../Results'
+
+import renderer from 'react-test-renderer';
+
+test('renders correctly when no barcode', () => {
+  const tree = renderer.create(<Results />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
