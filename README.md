@@ -99,8 +99,6 @@ Our story board has a rudimentary layout for each page we expected to have after
 * [React Native Navigation](https://wix.github.io/react-native-navigation/#/)
 <br />
 <br />
-[]()
-[]()
 --
 Testing
 * [Jest](https://jestjs.io/en/)
