@@ -4,8 +4,11 @@
 
  Final engineering project for Makers Apprenticeship
 This App was developed to scan barcodes on consumable produce and let the user know whether it contains Palm Oil products. 
+
+![MVPs](https://imgur.com/kGLkqoz.png) 
+
 <br />
-<br />
+
 __-------------------------------------------------------------------------------__ <br />
 __-------------------------------------------------------------------------------__ 
 <br />
