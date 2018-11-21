@@ -51,11 +51,14 @@ __------------------------------------------------------------------------------
 
 # __Procedure & Developmental Approach__
 <br />
-    Using Agile and following a two day sprint.
-    This proved to be redundant as we worked closely together normally in the vicinty of one another.
-    The product was determined through a system of votes whereby we eliminated the product which was either too complex or least favoured.
-    For the first week we spent a lot of time researching and trying to spike basic functionality in order to better understand the stack we were working with.
-    We split into to trios and disscussed a plan of action at the beggining of each day and had a retro almost everyday concluding the knowledge we had acquired and a demo of anything that had been built.
+The proccess we followed for the development of this project was fluid and at times AdHoc.
+We based it on an Agile workflow and followed two day sprints.
+This proved to be in most cases redundant as we worked closely together normally in the vicinty of one another.
+
+The product was determined through a system of votes whereby we eliminated the product which was either too complex or least favoured.
+For the first week we spent a lot of time researching and trying to spike basic functionality in order to better understand the stack we were working with while working toward a minimum viable product.
+We disscussed a plan of action at the beggining of each day and had a retro toward the end of most days concluding the knowledge we had acquired and a demo of anything that had been built.
+Most of the features and functionality for this project were developed in trios.
 
 <br />
 <br />
