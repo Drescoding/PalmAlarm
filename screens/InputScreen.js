@@ -26,9 +26,12 @@ class InputScreen extends React.Component {
       <View style={styles.container}>
         <InputManual
         navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+        navigateToHome={() => this.props.navigation.navigate('HomeScreen')}
         callBackFromParent={this.myCallback}
         />
-        <InputScanner navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
+
+        <InputScanner
+        navigateToResult={() => this.props.navigation.navigate('ResultsScreen', {barcode: this.state.barcode})}
         callBackFromParent={this.myCallback}
         />
       </View>
@@ -40,10 +43,10 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
     flex: 1,
-    backgroundColor: '#E4DFC1',
+    backgroundColor: '#4A7051',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
 
 export default InputScreen;

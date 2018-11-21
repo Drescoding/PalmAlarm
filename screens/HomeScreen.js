@@ -17,7 +17,7 @@ class HomeScreen extends React.Component {
     this._loadFontsAsync();
   }
    _loadFontsAsync = async () => {
-    await Font.loadAsync({'argana': require('../assets/fonts/Argana.ttf')});
+    await Font.loadAsync({'amatic': require('../assets/fonts/Amatic.ttf')});
     this.setState({loaded: true});
   }
 
@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontFamily: 'argana',
-    fontSize: 65,
+    fontFamily: 'amatic',
+    fontSize: 80,
     color: 'gray',
+    marginTop: 40
   },
   buttonContainer: {
     borderRadius: 10,

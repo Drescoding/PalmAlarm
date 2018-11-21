@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/Feather';
-import InputManual from './InputManual';
+import { AppLoading, Font } from 'expo';
 
 export default class Results extends React.Component {
   constructor(props){
@@ -10,7 +10,16 @@ export default class Results extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: null,
+      loaded: false,
     }
+  }
+
+  componentWillMount() {
+    this._loadFontsAsync();
+  }
+   _loadFontsAsync = async () => {
+    await Font.loadAsync({'mont': require('../assets/fonts/Montserrat.ttf')});
+    this.setState({loaded: true});
   }
 
   componentDidMount(){
@@ -31,6 +40,9 @@ export default class Results extends React.Component {
   }
 
   render() {
+    if (!this.state.loaded) {
+      return <AppLoading />;
+    }
     if (this.state.isLoading) {
       //Case 1: The data is not loaded from the API yet.
       return (
@@ -45,7 +57,7 @@ export default class Results extends React.Component {
         //Case 2: The barcode does not exist in the database
         return(
           <View style={styles.container}>
-            <Text>Product not found</Text>
+            <Text style={styles.text}>Product not found</Text>
           </View>
         );
       } else {
@@ -60,8 +72,8 @@ export default class Results extends React.Component {
           //Case 3.1: There is definitely palm oil in there. Test with: 3700211234221
             return(
             <View style={styles.container}>
-              <Text style={styles.text}> {product_name} </Text>
-              <Text style={styles.text}> There are {palm_ingredients_total} ingredient from Palm oil in this </Text>
+              <Text style={styles.textName}> {product_name} </Text>
+              <Text style={styles.text}> This product contains {palm_ingredients_total} ingredient(s) from Palm oil</Text>
               <Animatable.Text animation="zoomInUp"><Icon name="thumbs-down" size={150} color="#ffff"/></Animatable.Text>
             </View>);
           } else if (maybe_total > 0 || maybe_list.length > 0){
@@ -69,8 +81,8 @@ export default class Results extends React.Component {
             //Test with: 3366321051563
               return(
                 <View style={styles.container}>
-                  <Text style={styles.text}> {product_name} </Text>
-                  <Text style={styles.text}> These ingredients: {maybe_list} may involve the use of palm oil </Text>
+                  <Text style={styles.textName}> {product_name} </Text>
+                  <Text style={styles.text}> These ingredients: {maybe_list} may involve the use of palm oil</Text>
                 </View>
               );
           } else if (palm_ingredients_total === 0 && palm_ingredients_list.length == 0 && (maybe_total === 0 || maybe_total === undefined)
@@ -79,8 +91,8 @@ export default class Results extends React.Component {
             //Test with: 737628064502
               return(
                 <View style={styles.container}>
-                  <Text style={styles.text}> {product_name} </Text>
-                  <Text style={styles.text}> No palm oil!</Text>
+                  <Text style={styles.textName}> {product_name} </Text>
+                  <Text style={styles.text}>This product does not contain palm oil</Text>
                   <Animatable.Text animation="zoomInUp"><Icon name="thumbs-up" size={150} color="#ffff"/></Animatable.Text>
                 </View>
               );
@@ -89,7 +101,7 @@ export default class Results extends React.Component {
             //Test: 9557129019006
               return(
                 <View style={styles.container}>
-                  <Text style={styles.text}> {product_name} </Text>
+                  <Text style={styles.textName}> {product_name} </Text>
                   <Text style={styles.text}> No information regarding presence of palm oil for this product</Text>
                 </View>
               );
@@ -102,12 +114,26 @@ export default class Results extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#829D96',
+    backgroundColor: '#4A7051',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text:{
+    fontSize: 20,
+    fontFamily: 'mont',
+    textAlign: 'center',
+    color: 'white',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 30
+  },
+  textName:{
     fontSize: 30,
-    // fontFamily: 'Argana new'
+    fontFamily: 'mont',
+    textAlign: 'center',
+    color: 'white',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 30
   }
 });
