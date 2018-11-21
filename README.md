@@ -2,9 +2,14 @@
 
 ## Outline
 
-    Final engineering project for Makers Apprenticeship
-    This App was developed to scan barcodes on consumable produce and let the user know whether it contains Palm Oil products.
-
+ Final engineering project for Makers Apprenticeship
+This App was developed to scan barcodes on consumable produce and let the user know whether it contains Palm Oil products. 
+<br />
+<br />
+__-------------------------------------------------------------------------------__ <br />
+__-------------------------------------------------------------------------------__ 
+<br />
+<br />
 ** _This Project was developed on macs and designed for compatibilty with IOS and Android devices._
 * [PalmAlarm Trello board](https://trello.com/b/Vjoo030t/palmalarm)
 
@@ -14,7 +19,8 @@
 
 * Make sure you have the following installed: <br />
 <br />
-    * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12) <br /> This can also be installed from CLI using:<br /> ``` xcode-select --install ```<br />
+    * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12) <br /> This can also be installed from CLI using: <br /> 
+    ``` xcode-select --install ``` <br />
     <br />
     * [Nodejs](https://nodejs.org/dist/v10.13.0/node-v10.13.0.pkg) (The version used for this project was 10.13.0)
     <br />
@@ -23,29 +29,59 @@
 * First clone the project repo locally: <br />
     ``` git clone https://github.com/AlexDresco/PalmAlarm.git ```
 
-* Then move into the project's root directory and run the following:<br />
-    ``` npm install -g expo-cli ```<br />
-    ``` npm install ```<br />
+* Then move into the project's root directory and run the following: <br />
+    ``` npm install -g expo-cli ``` <br />
+    ``` npm install ``` <br />
     ``` npm install react-native-animatable --save ```
 <br />
 <br />
 
 # Testing
+* To run tests:<br />
+    ``` npm test ```
 
 <br />
 
 
-# Procedure and Developmental approach
+# __Procedure & Developmental Approach__
+
+    Using Agile and following a two day sprint.
+    This proved to be redundant as we worked closely together normally in the vicinty of one another.
+    The product was determined through a system of votes whereby we eliminated the product which was either too complex or least favoured.
+    For the first week we spent a lot of time researching and trying to spike basic functionality in order to better understand the stack we were working with.
+    We split into to trios and disscussed a plan of action at the beggining of each day and had a retro almost everyday concluding the knowledge we had acquired and a demo of anything that had been built.
+
 
 <br />
 
 # Tech Stack
 
+* [Expo](https://github.com/expo/expo)
+* [Javascript](https://www.javascript.com/)
+* [NodeJS](https://nodejs.org/en/)
+* [React Native](https://www.reactnative.guide/index.html)
+* [React Navigation](https://reactnavigation.org/)
+* [React Native Navigation](https://wix.github.io/react-native-navigation/#/)
+* []()
+* []() <br />
+--
+Testing
+* [Jest](https://jestjs.io/en/)
+* [Enzyme](https://www.npmjs.com/package/enzyme)
+* [Enzyme](https://airbnb.io/enzyme/) <br />
+--
+Continuous Integration
+* [Travis CI](https://travis-ci.org/)
+
 <br />
 
 # Developers
-
-<br />
+  * [AlexDresco](https://github.com/AlexDresco)
+  * [AmyDe](https://github.com/AmyDe)
+  * [DamoH](https://github.com/DamoH)
+  * [Din-s1](https://github.com/Din-s1)
+  * [Ruaridhi](https://github.com/Ruaridhi)
+  * [victorjefferies](https://github.com/victorjefferies)
 
 # __Acknowledgements__
 
