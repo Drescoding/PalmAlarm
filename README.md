@@ -19,7 +19,10 @@ __------------------------------------------------------------------------------
 
 * Make sure you have the following installed: <br />
 <br />
-    * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12) <br /> This can also be installed from CLI using: <br /> 
+    * [Homebrew](https://brew.sh/) <br /> CLI installation: <br />
+    ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` <br />
+<br />
+    * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12)(IOS Simulator) <br /> This can also be installed from CLI using: <br /> 
     ``` xcode-select --install ``` <br />
     <br />
     * [Nodejs](https://nodejs.org/dist/v10.13.0/node-v10.13.0.pkg) (The version used for this project was 10.13.0)
@@ -44,14 +47,39 @@ __------------------------------------------------------------------------------
 
 
 # __Procedure & Developmental Approach__
-
+<br />
     Using Agile and following a two day sprint.
     This proved to be redundant as we worked closely together normally in the vicinty of one another.
     The product was determined through a system of votes whereby we eliminated the product which was either too complex or least favoured.
     For the first week we spent a lot of time researching and trying to spike basic functionality in order to better understand the stack we were working with.
     We split into to trios and disscussed a plan of action at the beggining of each day and had a retro almost everyday concluding the knowledge we had acquired and a demo of anything that had been built.
 
+<br />
+<br />
 
+   ## __Story Board__
+
+Our story board has a rudimentary layout for each page we expected to have after developing this app.
+
+---
+
+ - The PalmAlarm HomeScreen which allows you to move onto scanning or an info page.
+ - Our scanning page with a manual input field.
+ - Finally both formats of the results page; One that indicates a product scanned doesn't contain Palm Oil and a Second that indicates a product does contain Palm Oil.
+ ---
+ - The final three drawing were non-MVP ideas for further development had we enough time before needing to present the project.
+
+---
+   ![MVP](https://imgur.com/jYc1Lq5.png)
+
+---
+<br />
+<br />
+
+   ## __User Stories__
+   ---
+   ![User Stories](https://imgur.com/Z1aPT60.png)
+    
 <br />
 
 # Tech Stack
@@ -59,16 +87,21 @@ __------------------------------------------------------------------------------
 * [Expo](https://github.com/expo/expo)
 * [Javascript](https://www.javascript.com/)
 * [NodeJS](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
 * [React Native](https://www.reactnative.guide/index.html)
 * [React Navigation](https://reactnavigation.org/)
 * [React Native Navigation](https://wix.github.io/react-native-navigation/#/)
-* []()
-* []() <br />
+<br />
+<br />
+[]()
+[]()
 --
 Testing
 * [Jest](https://jestjs.io/en/)
 * [Enzyme](https://www.npmjs.com/package/enzyme)
-* [Enzyme](https://airbnb.io/enzyme/) <br />
+* [Enzyme](https://airbnb.io/enzyme/)
+<br />
+<br />
 --
 Continuous Integration
 * [Travis CI](https://travis-ci.org/)
@@ -88,6 +121,8 @@ Continuous Integration
 * ## __[Makers Apprenticeships](https://makers.tech/)__
 
 * ## __Coaches__
+    To these coaches in particular, 
+    thank you for the time and effort you put into turning us into the developers of the future.
     * [Alice](https://github.com/alicelieutier)
     * [Eddie](https://github.com/EdwardAndress)
     * [Dan](https://github.com/dbugsy)
