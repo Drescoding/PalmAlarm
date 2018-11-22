@@ -61,7 +61,6 @@ We disscussed a plan of action at the beggining of each day and had a retro towa
 Most of the features and functionality for this project were developed in trios.
 
 <br />
-<br />
 
    ## __Story Board__
 
