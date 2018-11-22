@@ -36,21 +36,54 @@ class InputScanner extends React.Component {
           <Text>Camera permission is not granted</Text> :
           <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: '100%', width: 500 }}
-          />
+              style={{ height: '90%', width: 400 }}
+              >
+              <View style={styles.layerTop} />
+                <View style={styles.layerCenter}>
+                  <View style={styles.layerLeft} />
+                  <View style={styles.focused} />
+                  <View style={styles.layerRight} />
+                </View>
+              <View style={styles.layerBottom} />
+          </BarCodeScanner>
         }
       </View>
     );
   }
 }
 
+const opacity = 'rgba(0, 0, 0, .5)';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: 'transparent',
+  },
+  layerTop: {
+    flex: 2,
+    backgroundColor: opacity
+  },
+  layerCenter: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  layerLeft: {
+    flex: 1,
+    backgroundColor: opacity
+  },
+  focused: {
+    flex: 10
+  },
+  layerRight: {
+    flex: 1,
+    backgroundColor: opacity
+  },
+  layerBottom: {
+    flex: 2,
+    backgroundColor: opacity
   }
 });
 
