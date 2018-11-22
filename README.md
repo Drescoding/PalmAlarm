@@ -33,8 +33,9 @@ This can also be installed from CLI using: <br />
 
 <br />
 
-#### First clone the project repo locally: <br />
-    ``` git clone https://github.com/AlexDresco/PalmAlarm.git ```
+First clone the project repo locally: <br />
+
+``` git clone https://github.com/AlexDresco/PalmAlarm.git ```
 
 * Then move into the project's root directory and run the following: <br />
     ``` npm install -g expo-cli ``` <br />
