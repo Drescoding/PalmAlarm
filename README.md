@@ -120,5 +120,5 @@ Our story board has a rudimentary layout for each page we expected to have after
     * [Dan](https://github.com/dbugsy)
 
 * ## __Thanks for advice on the README__
-   *[TinyGobby](https://github.com/TinyGobby)
+   * [TinyGobby](https://github.com/TinyGobby)
 
