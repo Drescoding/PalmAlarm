@@ -42,14 +42,10 @@ First clone the project repo locally: <br />
     ``` npm install ``` <br />
     ``` npm install react-native-animatable --save ```
 <br />
-<br />
 
 # Testing
 * To run tests:<br />
     ``` npm test ```
-
-<br />
-
 
 # __Procedure & Developmental Approach__
 <br />
