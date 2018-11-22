@@ -44,21 +44,21 @@ Then clone the project repo locally: <br />
 <br />
 
 # Testing
+
 * To run tests:<br />
     ``` npm test ```
+
+** _We have had conflicts between testing suites and our tech stack. We decided to focus on funcionality testing and integration testing following the advice given by coaches however we faced numerous problems with Expo and Enzyme._
 
 <br />
 
 # __Procedure & Developmental Approach__
 <br />
-The proccess we followed for the development of this project was fluid and at times AdHoc.
-We based it on an Agile workflow and followed two day sprints.
-This proved to be in most cases redundant as we worked closely together normally in the vicinty of one another.
+We set out to follow Agile practices, however given the small group and close working patterns (regularly swapping teams and making group decissions) our updates and design changes were not confined to the end of sprints, but we were able to solve problems and make desisions as and when they came up.
 
-The product was determined through a system of votes whereby we eliminated the product which was either too complex or least favoured.
-For the first week we spent a lot of time researching and trying to spike basic functionality in order to better understand the stack we were working with while working toward a minimum viable product.
-We disscussed a plan of action at the beggining of each day and had a retro toward the end of most days concluding the knowledge we had acquired and a demo of anything that had been built.
-Most of the features and functionality for this project were developed in trios.
+To decide upon the product we would create, we first individually came up with ideas, and then presented them to the group. After discussing both the technical viability of the project as well as the use of the project, we agree upon a final product. An app that scanned products for palm oil or palm oil derrivatives gave us the chance to use a tech stack that we were interested in whilst tackling a contempary issue.
+
+For the first week we spent a lot of time researching and trying to create basic functionality in order to better understand the stack we were working with while working toward a minimum viable product. We disscussed a plan of action at the beggining of each day and had a retro toward the end of most days concluding the knowledge we had acquired and a demo of anything that had been built. Most of the features and functionality for this project were developed in pairs or threes.
 
 <br />
 
@@ -97,7 +97,6 @@ Our story board has a rudimentary layout for each page we expected to have after
 * [React Navigation](https://reactnavigation.org/)
 * [React Native Navigation](https://wix.github.io/react-native-navigation/#/)
 * [Jest](https://jestjs.io/en/)
-* [Enzyme](https://www.npmjs.com/package/enzyme)
 * [Enzyme](https://airbnb.io/enzyme/)
 * [Travis CI](https://travis-ci.org/)
 
@@ -119,4 +118,7 @@ Our story board has a rudimentary layout for each page we expected to have after
     * [Alice](https://github.com/alicelieutier)
     * [Eddie](https://github.com/EdwardAndress)
     * [Dan](https://github.com/dbugsy)
+
+* ## __Thanks for advice on the README__
+   *[TinyGobby](https://github.com/TinyGobby)
 
