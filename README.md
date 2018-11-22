@@ -20,7 +20,7 @@ __------------------------------------------------------------------------------
 
 # Local Installation
 
-Make sure you have the following installed: <br />
+#### Make sure you have the following installed: <br />
 * [Homebrew](https://brew.sh/) <br />
 CLI installation: <br />
 ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` <br />
@@ -33,7 +33,7 @@ This can also be installed from CLI using: <br />
 
 <br />
 
-* First clone the project repo locally: <br />
+#### First clone the project repo locally: <br />
     ``` git clone https://github.com/AlexDresco/PalmAlarm.git ```
 
 * Then move into the project's root directory and run the following: <br />
