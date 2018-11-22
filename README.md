@@ -20,19 +20,18 @@ __------------------------------------------------------------------------------
 
 # Local Installation
 
-* Make sure you have the following installed: <br />
+Make sure you have the following installed: <br />
+* [Homebrew](https://brew.sh/) <br />
+CLI installation: <br />
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` <br />
 <br />
-    * [Homebrew](https://brew.sh/) <br />
-    CLI installation: <br />
-    ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"``` <br />
-    <br />
-    * [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12)(IOS Simulator) <br />
-    This can also be installed from CLI using: <br /> 
-    ``` xcode-select --install ``` <br />
-    <br />
-    * [Nodejs](https://nodejs.org/dist/v10.13.0/node-v10.13.0.pkg) (The version used for this project was 10.13.0)
-    <br />
-    <br />
+* [Xcode](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12)(IOS Simulator) <br />
+This can also be installed from CLI using: <br /> 
+``` xcode-select --install ``` <br />
+<br />
+* [Nodejs](https://nodejs.org/dist/v10.13.0/node-v10.13.0.pkg) (The version used for this project was 10.13.0)
+<br />
+<br />
 
 * First clone the project repo locally: <br />
     ``` git clone https://github.com/AlexDresco/PalmAlarm.git ```
