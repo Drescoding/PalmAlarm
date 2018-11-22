@@ -43,6 +43,13 @@ class HomeScreen extends React.Component {
                 </TouchableHighlight>
               </View>
 
+              <View>
+              <TouchableHighlight style={styles.buttonContainer}
+                onPress={() => this.props.navigation.navigate('InfoPageScreen')}>
+                <Text style={styles.buttonText}>Info</Text>
+                </TouchableHighlight>
+              </View>
+
         </ImageBackground>
       </View>
     );
