@@ -97,15 +97,10 @@ Our story board has a rudimentary layout for each page we expected to have after
 * [React Native](https://www.reactnative.guide/index.html)
 * [React Navigation](https://reactnavigation.org/)
 * [React Native Navigation](https://wix.github.io/react-native-navigation/#/)
-<br />
-<br />
 * [Jest](https://jestjs.io/en/)
 * [Enzyme](https://www.npmjs.com/package/enzyme)
 * [Enzyme](https://airbnb.io/enzyme/)
-<br />
-<br />
 * [Travis CI](https://travis-ci.org/)
-<br />
 
 # Developers
   * [AlexDresco](https://github.com/AlexDresco)
