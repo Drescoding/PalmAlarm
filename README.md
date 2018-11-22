@@ -60,6 +60,7 @@ For the first week we spent a lot of time researching and trying to spike basic 
 We disscussed a plan of action at the beggining of each day and had a retro toward the end of most days concluding the knowledge we had acquired and a demo of anything that had been built.
 Most of the features and functionality for this project were developed in trios.
 
+<br />
 
    ## __Story Board__
 
