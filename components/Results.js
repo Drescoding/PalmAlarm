@@ -68,7 +68,15 @@ export default class Results extends React.Component {
         const maybe_list = this.state.dataSource.product.ingredients_that_may_be_from_palm_oil_tags;
         const product_name = this.state.dataSource.product.product_name
 
-          if (palm_ingredients_total > 0 || palm_ingredients_list.length > 0) {
+          if (palm_ingredients_list == undefined || maybe_list == undefined ){
+            //Tested with "_", this keeps changing though. Kitkat was broken then updated and working yesterday. 
+            return(
+              <View style={styles.container}>
+                <Text style={styles.textName}> {product_name} </Text>
+                <Text style={styles.text}> No information regarding presence of palm oil for this product</Text>
+              </View>
+            );
+          } else if (palm_ingredients_total > 0 || palm_ingredients_list.length > 0) {
           //Case 3.1: There is definitely palm oil in there. Test with: 3700211234221
             return(
             <View style={styles.container}>
