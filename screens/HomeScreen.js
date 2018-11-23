@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ImageBackground, TouchableHighlight} from 'reac
 import { AppLoading, Font } from 'expo';
 
 
+
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
@@ -41,6 +42,12 @@ class HomeScreen extends React.Component {
                 onPress={() => this.props.navigation.navigate('InputScreen')}>
                 <Text style={styles.buttonText}>Scan</Text>
                 </TouchableHighlight>
+
+                <TouchableHighlight style={styles.buttonContainer}
+                  onPress={() => this.props.navigation.navigate('InfoScreen')}>
+                  <Text style={styles.buttonText}>Info</Text>
+                </TouchableHighlight>
+
               </View>
 
         </ImageBackground>
@@ -51,12 +58,10 @@ class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
     height: '100%',
     resizeMode: 'stretch',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
   },
   headerContainer: {
     alignItems: 'center',
@@ -65,13 +70,14 @@ const styles = StyleSheet.create({
     fontFamily: 'amatic',
     fontSize: 80,
     color: 'gray',
-    marginTop: 40
+    marginTop: 40,
+    marginBottom: 280
   },
   buttonContainer: {
     borderRadius: 10,
     width: 250,
     height: 55,
-    marginBottom: 150,
+    marginBottom: 30,
     backgroundColor: "#E4DFC1"
   },
 
