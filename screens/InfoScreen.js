@@ -27,13 +27,24 @@ class HomeScreen extends React.Component {
                  />
               </View>
 
+              <Text style={{color: 'blue'}}
+                onPress={() => LinkingIOS.openURL('https://redapes.org/')}>
+                Help the Orangutans.
+              </Text>
+
               <View>
-              <TouchableHighlight style={styles.buttonContainer}
+                <TouchableHighlight style={styles.buttonContainer}
                 onPress={() => this.props.navigation.navigate('HomeScreen')}>
                 <Text style={styles.buttonText}>Home</Text>
                 </TouchableHighlight>
               </View>
 
+              <View>
+                <TouchableHighlight style={styles.buttonContainer}
+                    onPress={() => this.props.navigation.navigate('InputScreen')}>
+                    <Text style={styles.buttonText}>Scan</Text>
+                </TouchableHighlight>
+              </View>
       </View>
     );
   }
